@@ -2,6 +2,7 @@
 
 
 
+/* generate a random number to select what the computer will play*/
 
 function computerPlay() {
 
@@ -16,6 +17,15 @@ function computerPlay() {
     }
 };
 
-
 console.log(computerPlay())
 
+var computerSelection = computerPlay();
+var playerSelection = prompt("Rock, paper, or scissors?");
+
+function playGame(playerSelection, computerSelection) {
+    if (playerSelection === computerSelection) {
+        return "Tie"
+    } else if (playerSelection === "Rock" && computerSelection === paper) {
+        return "You lose! Paper beats Rock"
+    }
+}
