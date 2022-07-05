@@ -52,6 +52,7 @@ let playerSelection = prompt("Rock, paper, or scissors?").toLowerCase();
 
 function game() { 
     let score = 0
+    let cscore = 0
     for (i=0; i<5; i++) {
         
           let roundResult = playRound();
@@ -59,10 +60,18 @@ function game() {
 
           if (roundResult.search("You won!") != -1) {
             score++;
+          } else if (roundResult.search("You lost") != -1) {
+            cscore++
           }
-    }
-    console.log(score);
-   
+    } 
+    console.log(score, cscore);
+         if (score > cscore) {
+            console.log('You won the game!')
+         } else if (cscore > score) {
+            console.log("You lost the game!")
+         } else {
+            console.log("It's a tie!")
+         }
 }
 
 game();
