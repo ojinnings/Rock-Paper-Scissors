@@ -19,12 +19,12 @@ function computerPlay() {
 
 console.log(computerPlay());
 
-var computerSelection = computerPlay();
-var playerSelection = prompt("Rock, paper, or scissors?");
+var computerSelection = "rock" /*computerPlay();*/
+var playerSelection = "rock" /*prompt("Rock, paper, or scissors?");*/
 
 function playGame(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
-        return "Tie"
+        console.log("Tie")
     } else if (playerSelection === "rock") {
         if (computerSelection === "scissors") {
             return "You won! Rock beats scissors!"
