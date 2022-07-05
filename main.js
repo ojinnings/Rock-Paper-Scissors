@@ -9,11 +9,11 @@ function computerPlay() {
     let randomnum = Math.floor(Math.random() *3) + 1;
 
     if (randomnum === 1) {
-        return "Rock"
+        return "rock"
     } else if (randomnum === 2) {
-        return "Paper"
+        return "paper"
     } else {
-        return "Scissors"
+        return "scissors"
     }
 };
 
@@ -23,7 +23,7 @@ let computerSelection = computerPlay();
 let playerSelection = prompt("Rock, paper, or scissors?").toLowerCase();
 
     if (playerSelection === computerSelection) {
-        console.log("Tie")
+        return "Tie"
     } else if (playerSelection === "rock") {
         if (computerSelection === "scissors") {
             return "You won! Rock beats scissors!"
@@ -50,12 +50,19 @@ let playerSelection = prompt("Rock, paper, or scissors?").toLowerCase();
 
 
 
-function game() {
+function game() { 
+    let score = 0
     for (i=0; i<5; i++) {
-
+        
           let roundResult = playRound();
           console.log(roundResult);
+
+          if (roundResult.search("You won!") != -1) {
+            score++;
+          }
     }
+    console.log(score);
+   
 }
 
 game();
