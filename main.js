@@ -6,7 +6,7 @@
 
 function computerPlay() {
 
-    var randomnum = Math.floor(Math.random() *3) + 1;
+    let randomnum = Math.floor(Math.random() *3) + 1;
 
     if (randomnum === 1) {
         return "Rock"
@@ -17,12 +17,11 @@ function computerPlay() {
     }
 };
 
-console.log(computerPlay());
+function playRound() {
 
-var computerSelection = "rock" /*computerPlay();*/
-var playerSelection = "rock" /*prompt("Rock, paper, or scissors?");*/
+let computerSelection = computerPlay();
+let playerSelection = prompt("Rock, paper, or scissors?").toLowerCase();
 
-function playGame(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
         console.log("Tie")
     } else if (playerSelection === "rock") {
@@ -35,7 +34,7 @@ function playGame(playerSelection, computerSelection) {
         if (computerSelection === "rock") {
             return "You won! Paper beats rock!"
         } else {
-            return "You lost! Scissors rockbeat paper!"
+            return "You lost! Scissors beat paper!"
         }
     } else if (playerSelection === "scissors") {
         if (computerSelection === "paper") {
@@ -43,7 +42,20 @@ function playGame(playerSelection, computerSelection) {
         } else {
             return "You lost! Rock beats scissors!"
         }
+    } else {
+        return "That's not a valid weapon."
     }
 };
 
-playGame(playerSelection,computerSelection);
+
+
+
+function game() {
+    for (i=0; i<5; i++) {
+
+          let roundResult = playRound();
+          console.log(roundResult);
+    }
+}
+
+game();
