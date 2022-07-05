@@ -1,18 +1,21 @@
 
 
-randomnum = Math.floor(Math.random() *3) + 1;
 
 
-function computerPlay(number) {
-    if (number === 1) {
+
+function computerPlay() {
+
+    var randomnum = Math.floor(Math.random() *3) + 1;
+
+    if (randomnum === 1) {
         return "Rock"
-    } else if (number ===2) {
+    } else if (randomnum ===2) {
         return "Paper"
     } else {
         return "Scissors"
     }
 };
 
-console.log(randomnum);
+
 console.log(computerPlay())
 
